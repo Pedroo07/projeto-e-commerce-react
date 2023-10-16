@@ -6,7 +6,8 @@ export default function Cart() {
   const { cartItens,setCartItens, cartVisible } = useContext(AppContext)
   const totalPrice = cartItens.reduce((acc,item) => item.price + acc, 0)
   const refresh = () => {
-    window.location.reload(true)
+    const updateItens = cartItens.splice(0, cartItens.length.id)
+    setCartItens(updateItens)
   }
   return (
     <section className={`cart ${cartVisible ? 'ativo' : ''}`}>
